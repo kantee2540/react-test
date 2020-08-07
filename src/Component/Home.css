@@ -6,10 +6,10 @@ img{
     box-shadow: 0px 2px 5px rgba(112, 112, 112, 0.3);
     border: 1px solid rgb(224, 224, 224);
     border-radius: 20px;
+    background-color: white;
     margin-bottom: 30px;
     padding: 0px;
     overflow: hidden;
-    
 }
 
 .post .description{
@@ -45,6 +45,10 @@ img{
     margin-right: 10px;
 }
 
+.post .news-origin{
+    color: navy;
+}
+
 .sidebar{
     list-style: none;
     padding-left: 0px;
@@ -60,6 +64,7 @@ img{
 .sidebar li a:hover, .sidebar li a:active{
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.055);
+    color: navy;
 }
 
 .sidebar .icon{
@@ -70,7 +75,6 @@ img{
 .description{
     padding: 20px;
 }
-
 .loading{
     background-color: rgba(0, 0, 0, 0.7);
     color: white;

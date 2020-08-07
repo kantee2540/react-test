@@ -100,11 +100,16 @@ class Home extends Component{
                                     <div className="sub-title">
                                         {item['description']}
                                     </div>
-                                    <div className="author">
-                                        <span>
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                        {item['author']}
+                                    <div className="d-flex bd-highlight">
+                                        <div className="author ">
+                                            <span>
+                                                <i className="fas fa-user"></i>
+                                            </span>
+                                            {item['author']}
+                                        </div>
+                                        <div className="ml-auto">
+                                            <b className="news-origin">{item['source']['name']}</b>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

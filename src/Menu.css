@@ -29,3 +29,19 @@
     color: white;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
+.dropdown .dropdown-menu{
+    padding: 5px;
+    border-radius: 13px;
+}
+
+.dropdown .dropdown-item{
+    font-size: 16px;
+    padding: 6px 10px;
+    color: black;
+    border-radius: 10px;
+}
+
+.dropdown .dropdown-item:hover{
+    background-color: navy;
+}
