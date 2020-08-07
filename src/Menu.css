@@ -1,0 +1,31 @@
+.menu-bar{
+    background-color: navy;
+    color: white;
+}
+
+.head-nav{
+    font-size: 23px;
+    padding: 20px;
+    display: inline-block;
+}
+
+.head-link ul, .account ul{
+    list-style-type: none;
+}
+
+.head-link li, .account li{
+    float: left;
+}
+
+.head-link li a, .account li a{
+    color: white;
+    padding: 20px 30px;
+    font-size: 23px;
+    display: block;
+}
+
+.head-link li a:hover, .account li a:hover{
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+}
