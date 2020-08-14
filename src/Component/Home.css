@@ -64,12 +64,11 @@ img{
 .sidebar li a:hover, .sidebar li a:active{
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.055);
-    color: navy;
+    color: navy !important;
 }
 
 .sidebar .icon{
     margin-right: 10px;
-    color: gray;
 }
 
 .description{

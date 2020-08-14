@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import axios from 'axios';
+
+const key = 'f6c13d309a454aa0bc778f45c5736073';
 
 class Home extends Component{
 
     constructor(props){
         super(props);
+        this.apiUrl = 'https://newsapi.org/v2/top-headlines';
+        this.params = {'category': 'general', 'country': 'th'};
         this.state = {
             error: null,
             isLoaded: false,
@@ -14,35 +19,35 @@ class Home extends Component{
     }
 
     componentDidMount() {
-        const apiUrl = 'http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f6c13d309a454aa0bc778f45c5736073'
-        axios.get(apiUrl)
+        axios.get(this.apiUrl, {
+            params: {
+                country: 'th',
+                apiKey: key,
+                category: this.params['category'],
+                country: this.params['country']
+            }
+        })
         .then(response => {
             this.setState({
                 isLoaded: true,
                 items: response.data["articles"]
             });
-        }).catch(function (error) {
-            console.log(error)
+        }).catch(error => {
+            this.setState({
+                error: error
+            });
+            console.log(error);
         }).then(function () {
             
         })
+    }
 
-        //Orginal
-        // fetch(apiUrl)
-        // .then((response) => response.json())
-        // .then((data) => {
-        //     this.setState({
-        //         isLoaded: true,
-        //         items: data["articles"]
-        //     });
-        //     //console.log(data["articles"]);
-        // },
-        // (error) => {
-        //     this.setState({
-        //         isLoaded: true,
-        //         error
-        //     });
-        // })
+    changeCategory(value){
+        this.setState({
+            isLoaded: false
+        })
+        this.params['category'] = value;
+        this.componentDidMount();
     }
 
     render(){
@@ -54,67 +59,91 @@ class Home extends Component{
                     <div className="col-3 d-none d-md-block">
                         <ul className="sidebar">
                             <li>
-                                <a href="#">
+                                <Link to="/" onClick={this.changeCategory.bind(this, 'business')}>
                                     <span className="icon">
-                                        <i className="far fa-clock"></i> 
+                                        <i className="fas fa-briefcase"></i>
                                     </span>
-                                    Most recent
-                                </a>
+                                    Business
+                                </Link>
                             </li>
                             <li>
-                                <a href="#">
+                                <Link  to="/" onClick={this.changeCategory.bind(this, 'entertainment')}>
                                     <span className="icon">
-                                        <i className="fas fa-history"></i>
+                                        <i className="fas fa-wine-bottle"></i>
                                     </span>
-                                    Latest Update
-                                </a>
+                                    Entertainment
+                                </Link>
                             </li>
-
                             <li>
-                                <a href="#">
+                                <Link  to="/" onClick={this.changeCategory.bind(this, 'general')}>
                                     <span className="icon">
-                                        <i className="fas fa-flag"></i>
+                                        <i className="fas fa-newspaper"></i>
                                     </span>
-                                    Page
-                                </a>
+                                    General
+                                </Link>
                             </li>
-
                             <li>
-                                <a href="#">
+                                <Link  to="/" onClick={this.changeCategory.bind(this, 'health')}>
                                     <span className="icon">
-                                        <i className="fas fa-users"></i>
+                                        <i className="fas fa-heartbeat"></i>
                                     </span>
-                                    Community
-                                </a>
+                                    Health
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/" onClick={this.changeCategory.bind(this, 'science')}>
+                                    <span className="icon">
+                                        <i className="fas fa-atom"></i>
+                                    </span>
+                                    Science
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/" onClick={this.changeCategory.bind(this, 'sports')}>
+                                    <span className="icon">
+                                        <i className="fas fa-running"></i> 
+                                    </span>
+                                    Sports
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/" onClick={this.changeCategory.bind(this, 'technology')}>
+                                    <span className="icon">
+                                        <i className="fas fa-tv"></i>
+                                    </span>
+                                    Technology
+                                </Link>
                             </li>
                         </ul>
                         Created from 2020
                     </div>
-                    <div className="col-12 col-md-9 row">
-                        {items.map((item, index)=>(
-                        <div className="col-6" key={index}>
-                            <div className="post">
-                                <img src={item['urlToImage']}/>
-                                <div className="description">
-                                    <div className="title">{item['title']}</div>
-                                    <div className="sub-title">
-                                        {item['description']}
-                                    </div>
-                                    <div className="d-flex bd-highlight">
-                                        <div className="author ">
-                                            <span>
-                                                <i className="fas fa-user"></i>
-                                            </span>
-                                            {item['author']}
+                    <div className="col-12 col-md-9 ">
+                        <div className="row">
+                            {items.map((item, index)=>(
+                            <div className="col-12 col-md-6" key={index}>
+                                <div className="post">
+                                    <img src={item['urlToImage']}/>
+                                    <div className="description">
+                                        <div className="title">{item['title']}</div>
+                                        <div className="sub-title">
+                                            {item['description']}
                                         </div>
-                                        <div className="ml-auto">
-                                            <b className="news-origin">{item['source']['name']}</b>
+                                        <div className="d-flex bd-highlight">
+                                            <div className="author ">
+                                                <span>
+                                                    <i className="fas fa-user"></i>
+                                                </span>
+                                                {item['author']}
+                                            </div>
+                                            <div className="ml-auto">
+                                                <b className="news-origin">{item['source']['name']}</b>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            ))}
                         </div>
-                        ))}
                     </div>
                 </div>
             </div>
@@ -127,7 +156,7 @@ export default Home;
 class Loading extends Component{
     render(){
         return(
-            <div class="loading">Loading!</div>
+            <div className="loading">Loading!</div>
         )
     }
 }
