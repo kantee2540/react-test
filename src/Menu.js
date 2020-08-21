@@ -17,7 +17,6 @@ class Menu extends Component {
             <b className="head-nav">NEWS</b>
           </div>
           <div className="head-link d-none d-md-block">
-            
             <ul>
               <li>
                 <NavLink activeClassName="head-link-active" to="/" exact={true}><i className="fas fa-newspaper"></i></NavLink>
@@ -33,6 +32,15 @@ class Menu extends Component {
               </li>
               <li>
                 <NavLink activeClassName="head-link-active" to="/contactus"><i className="fas fa-phone"></i></NavLink>
+              </li>
+            </ul>
+          </div>
+          <div className="account d-block d-md-none">
+            <ul>
+              <li>
+                  <a href="#">
+                    <i class="fas fa-bars"></i>
+                  </a>
               </li>
             </ul>
           </div>
