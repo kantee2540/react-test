@@ -1,20 +1,22 @@
 import React from 'react'
 import './App.css'
-import Menu from './Menu.js'
-import { Switch, Route, Router, BrowserRouter } from 'react-router-dom'
+import Menu from './Component/Menu.js'
+import { Container } from 'react-bootstrap'
+import { Switch, Route, Router, BrowserRouter, Redirect } from 'react-router-dom'
 
-import Home from './Component/Home'
-import Post from './Component/Post'
-import About from './Component/About'
-import Product from './Component/Product'
-import Contact from './Component/ContactUs'
+import Home from './Home/Home'
+import Post from './Post/Post'
+import About from './About/About'
+import Contact from './ContactUs/ContactUs'
+import Login from './Auth/Login'
 
 const App = () => (
-  <BrowserRouter>
+  <>
+  <BrowserRouter basename="/">
   <div>
     <Menu />
     <div>
-      <div className="container content">
+      <Container className="content">
         <Switch>
           <Route exact path="/">
             <Home/>
@@ -22,20 +24,22 @@ const App = () => (
           <Route path="/post">
             <Post/>
           </Route>
-          <Route path="/about">
-            <About/>
-          </Route>
           <Route path="/product">
-            <Product/>
+            <About/>
           </Route>
           <Route path="/contactus">
             <Contact/>
           </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
         </Switch>
-      </div>
+        
+      </Container>
     </div>
   </div>
   </BrowserRouter>
+  </>
 )
 
 export default App

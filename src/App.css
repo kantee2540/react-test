@@ -3,10 +3,44 @@ body{
 }
 
 .content{
-  margin-top: 30px;
+  margin-top: 100px;
   margin-bottom: 30px;
 }
 
 h1{
   margin-bottom: 20px;
+}
+
+.head-content{
+  margin-bottom: 20px;
+}
+
+.head-title{
+  padding: 20px 5px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.head-button{
+  border-radius: 10px;
+  color: black;
+  padding: 13px;
+  font-size: 20px;
+}
+
+.head-button:hover{
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: black;
+}
+
+.app-button{
+  border-radius: 10px;
+  background-color: dodgerblue;
+  width: 100%;
+}
+
+.app-button-gray{
+  border-radius: 10px;
+  width: 100%;
 }

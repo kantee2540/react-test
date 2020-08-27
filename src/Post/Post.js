@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Modal } from 'react-bootstrap';
+import { Row, Col, Button, Modal } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Post.css'
 
@@ -16,17 +17,20 @@ class Post extends Component{
     }
 
     componentDidMount(){
+        this.fetchData();
+    }
+
+    fetchData(){
         axios.get("http://localhost:8000/post")
         .then(response => {
             this.setState({
                 isLoaded: true,
                 items: response.data
             });
-            console.log(response.data);
         })
         .catch(error => {
             this.setState({
-                error: error
+                error: error.message
             });
         });
     }
@@ -36,8 +40,11 @@ class Post extends Component{
         return(
             <div>
                 
-                {!isLoaded ? <Loading/>: ''}
-                <h1>Post</h1>
+                {!isLoaded ? <Loading message={!error ? "Loading" : error}/>: ''}
+                <div className="head-content">
+                    <span className="head-title">Post</span>
+                    <a href="#" className="head-button"><i className="fas fa-redo"></i></a>
+                </div>
                 <div className="row">
                     {items.map((item, index) => (
                         <div className="col-12 col-md-6 col-lg-4 col-xl-3" key={index}>
@@ -66,10 +73,12 @@ class Post extends Component{
 
 export default Post;
 
-function Loading(){
-    return(
-        <div className="loading">Loading</div>
-    )
+class Loading extends React.Component{
+    render(){
+        return(
+            <div className="loading">{this.props.message}</div>
+        )
+    }
     
 }
 
@@ -83,18 +92,20 @@ function PostModal(){
 
     const postMessage = () => {
         var mes = message;
-        console.log(mes);
-        axios.post("http://localhost:8000/post/add", {
-            message: mes
-            
-        },{
+
+        const formData = new FormData();
+        formData.append('message', mes);
+        
+        axios.post('http://localhost:8000/post/add', formData,{
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-type': 'multipart/form-data',
+            'Accept': 'application/json'
             }
         })
         .then(response => {
             if (response.status == 200){
                 handleClose();
+                this.fetchData();
             }
         }).catch(error =>{
             console.log(error);

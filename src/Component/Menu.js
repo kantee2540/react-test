@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { Row, Col, Button } from 'react-bootstrap'
 import './Menu.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 class Menu extends Component {
 
@@ -52,10 +53,19 @@ class Menu extends Component {
                     <i className="fas fa-user-circle"></i>
                   </a>
                   <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                    <a className="dropdown-item" href="#">Profile</a>
-                    <a className="dropdown-item" href="#">Account</a>
-                    <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Sign out</a>
+                    
+                    {/* <div className="dropdown-divider"></div>
+                    <a className="dropdown-item" href="#">Sign out</a> */}
+                    
+                        <div className="profile"><i className="fas fa-user-circle user-profile"></i></div>
+                      
+                        <div className="dropdown-title">
+                          <b>Sign in to community</b>
+                        </div>
+                        <div className="dropdown-description">Let's share with us. sign up today if you're new.</div>
+                        <div className="signin-button">
+                          <Link className="dropdown-item signin-btn" to="/login">Sign in</Link>
+                        </div>
                   </div>
                 </div>
               </li>

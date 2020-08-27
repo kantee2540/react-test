@@ -10,7 +10,7 @@ class Home extends Component{
     constructor(props){
         super(props);
         this.apiUrl = 'https://newsapi.org/v2/top-headlines';
-        this.params = {'category': 'general', 'country': 'th'};
+        this.params = {'category': 'general', 'country': 'us'};
         this.state = {
             error: null,
             isLoaded: false,
@@ -21,7 +21,6 @@ class Home extends Component{
     componentDidMount() {
         axios.get(this.apiUrl, {
             params: {
-                country: 'th',
                 apiKey: key,
                 category: this.params['category'],
                 country: this.params['country']
