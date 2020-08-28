@@ -119,7 +119,7 @@ class Home extends Component{
                     <div className="col-12 col-md-9 ">
                         <div className="row">
                             {items.map((item, index)=>(
-                            <div className="col-12 col-md-6" key={index}>
+                            <div className="col-12 col-sm-6" key={index}>
                                 <div className="post">
                                     <img src={item['urlToImage']}/>
                                     <div className="description">
@@ -155,7 +155,7 @@ export default Home;
 class Loading extends Component{
     render(){
         return(
-            <div className="loading">Loading!</div>
+            <div className="loading">Loading</div>
         )
     }
 }

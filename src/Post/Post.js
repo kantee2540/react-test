@@ -21,6 +21,7 @@ class Post extends Component{
     }
 
     fetchData(){
+        this.setState({ isLoaded: false });
         axios.get("http://localhost:8000/post")
         .then(response => {
             this.setState({
@@ -43,13 +44,15 @@ class Post extends Component{
                 {!isLoaded ? <Loading message={!error ? "Loading" : error}/>: ''}
                 <div className="head-content">
                     <span className="head-title">Post</span>
-                    <a href="#" className="head-button"><i className="fas fa-redo"></i></a>
+                    <Link className="head-button" onClick={this.fetchData.bind(this)}><i className="fas fa-redo"></i></Link>
                 </div>
-                <div className="row">
+                <Row>
                     {items.map((item, index) => (
-                        <div className="col-12 col-md-6 col-lg-4 col-xl-3" key={index}>
+                        <Col xs={12} sm={6} md={6} lg={4} xl={3} key={index}>
                             <div className="post-item">
+                                <div className="post-message">
                                 {item['message']}
+                                </div>
                                 <hr/>
                                 <div className="row post-action">
                                     <a className="col-4" href="#"><i className="far fa-heart"></i></a>
@@ -58,9 +61,9 @@ class Post extends Component{
                                     <a className="col-4" href="#"><i className="fas fa-align-justify"></i></a>
                                 </div>
                             </div>
-                        </div>
+                        </Col>
                     ))}
-                </div>
+                </Row>
 
                 <PostModal/>
 

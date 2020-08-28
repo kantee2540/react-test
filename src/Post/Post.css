@@ -8,6 +8,15 @@
     overflow: hidden;
 }
 
+.post-item hr{
+    margin: 15px 0px;
+}
+
+.post-message{
+    height: 70px;
+    overflow: hidden;
+}
+
 .post-action{
     text-align: center;
     display: block;
@@ -31,7 +40,7 @@
     z-index: 10;
     position: fixed;
     color: white;
-    background-color: navy;
+    background-color: dodgerblue;
     border-radius: 100%;
     box-shadow: 0px 5px 10px rgba(112, 112, 112, 0.5);
     font-size: 23px;
@@ -42,5 +51,5 @@
 
 .float-button:hover{
     color: white;
-    background-color: rgb(0, 0, 160);
+    background-color: rgb(27, 126, 226);
 }

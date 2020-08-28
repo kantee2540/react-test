@@ -8,15 +8,17 @@ import Home from './Home/Home'
 import Post from './Post/Post'
 import About from './About/About'
 import Contact from './ContactUs/ContactUs'
+import Setting from './Setting/Setting'
 import Login from './Auth/Login'
 
+const theme = localStorage.getItem('theme');
 const App = () => (
   <>
   <BrowserRouter basename="/">
   <div>
     <Menu />
     <div>
-      <Container className="content">
+      <Container fluid="lg" className="content">
         <Switch>
           <Route exact path="/">
             <Home/>
@@ -27,8 +29,8 @@ const App = () => (
           <Route path="/product">
             <About/>
           </Route>
-          <Route path="/contactus">
-            <Contact/>
+          <Route path="/settings">
+            <Setting/>
           </Route>
           <Route path="/login">
             <Login/>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { ReactDOM, Component } from 'react'
 import { Row, Col, Button } from 'react-bootstrap'
 import './Menu.css'
 import { NavLink, Link } from 'react-router-dom'
@@ -7,10 +7,23 @@ class Menu extends Component {
 
   constructor(props){
     super(props);
+    this.state = { isShowSidebar: false };
   }
   
+  openSidebar = () =>{
+    if (!this.state.isShowSidebar){
+      this.setState({ isShowSidebar: true });
+    }else{
+      this.setState({ isShowSidebar: false });
+    }
+  }
+
+  clicked = () => {
+    this.setState({ isShowSidebar: false });
+  }
 
   render() {
+    const { isShowSidebar } = this.state
     return (
       <div className="container-fluid menu-bar">
         <div className="d-flex justify-content-between">
@@ -23,7 +36,7 @@ class Menu extends Component {
                 <NavLink activeClassName="head-link-active" to="/" exact={true}><i className="fas fa-newspaper"></i></NavLink>
               </li>
               <li>
-                <NavLink activeClassName="head-link-active" to="/post"><i class="fas fa-mail-bulk"></i></NavLink>
+                <NavLink activeClassName="head-link-active" to="/post"><i className="fas fa-mail-bulk"></i></NavLink>
               </li>
               <li>
                 <NavLink activeClassName="head-link-active" to="/about"><i className="fas fa-info-circle"></i></NavLink>
@@ -32,15 +45,15 @@ class Menu extends Component {
                 <NavLink activeClassName="head-link-active" to="/product" ><i className="fas fa-shopping-cart"></i></NavLink>
               </li>
               <li>
-                <NavLink activeClassName="head-link-active" to="/contactus"><i className="fas fa-phone"></i></NavLink>
+                <NavLink activeClassName="head-link-active" to="/settings"><i className="fas fa-cog"></i></NavLink>
               </li>
             </ul>
           </div>
           <div className="account d-block d-md-none">
             <ul>
               <li>
-                  <a href="#">
-                    <i class="fas fa-bars"></i>
+                  <a href="#" onClick={this.openSidebar}>
+                    <i className={isShowSidebar ? 'fas fa-times' : 'fas fa-bars'}></i>
                   </a>
               </li>
             </ul>
@@ -68,6 +81,20 @@ class Menu extends Component {
                         </div>
                   </div>
                 </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="d-flex d-md-block">
+          <div className={"sidebar-m " + (isShowSidebar ? 'visible' : 'hidden')}>
+            <ul>
+              <li><NavLink to="/" onClick={this.clicked}><i className="fas fa-newspaper"></i>News</NavLink></li>
+              <li><NavLink to="/post" onClick={this.clicked}><i className="fas fa-mail-bulk"></i>Post</NavLink></li>
+              <li><NavLink to="/about" onClick={this.clicked}><i className="fas fa-info-circle"></i>About</NavLink></li>
+              <li><NavLink to="/product" onClick={this.clicked}><i className="fas fa-shopping-cart"></i>Product</NavLink></li>
+              <li><NavLink to="/settings" onClick={this.clicked}><i className="fas fa-cog"></i>Setting</NavLink></li>
+              <hr/>
+              <li><NavLink to="/login" onClick={this.clicked}><i className="fas fa-user-circle"></i>Sign in</NavLink>
               </li>
             </ul>
           </div>
