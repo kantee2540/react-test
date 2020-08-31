@@ -1,8 +1,10 @@
-.setting-content{
-    padding: 0px 30px;
-    position: sticky;
+.setting-menu{
+    position: fixed;
 }
 
+.setting-content{
+    padding: 0px 30px;
+}
 hr{
     margin: 0px;
 }
@@ -11,6 +13,7 @@ hr{
     padding: 20px 15px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid rgba(131, 131, 131, 0.2);
 }
 
 .setting-link:hover{
@@ -51,7 +54,7 @@ hr{
     right: 0;
     bottom: 0;
     border-radius: 15px;
-    background-color: #ccc;
+    background-color: rgba(192, 192, 192, 0.8);
     -webkit-transition: .3s;
     transition: .3s ease-out;
 }
@@ -81,4 +84,10 @@ input:checked + .slider:before {
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
+}
+
+select{
+    width: 200px;
+    padding: 5px;
+    border: none;
 }

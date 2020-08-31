@@ -16,12 +16,22 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({theme}) => theme.text};
   }
 
-  .post, .post-item{
+  .post, .post-item, .login-content{
     background-color: ${({ theme }) => theme.postBackground};
   }
 
   .post-item a{
     color: ${({theme}) => theme.text};
+  }
+
+  select{
+    background-color: ${({ theme }) => theme.postBackground};
+    color: ${({theme}) => theme.text};
+  }
+
+  .form-control{
+    background-color: ${({ theme }) => theme.body} !important;
+    color: ${({theme}) => theme.text} !important;
   }
 
   hr{
@@ -44,7 +54,5 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({theme}) => theme.sidebarlink};
     background-color: ${({theme}) => theme.sidebarlinkhover};
   }
-
-  
 
 `;

@@ -44,11 +44,10 @@ class Post extends Component{
                 {!isLoaded ? <Loading message={!error ? "Loading" : error}/>: ''}
                 <div className="head-content">
                     <span className="head-title">Post</span>
-                    <Link className="head-button" onClick={this.fetchData.bind(this)}><i className="fas fa-redo"></i></Link>
                 </div>
                 <Row>
                     {items.map((item, index) => (
-                        <Col xs={12} sm={6} md={6} lg={4} xl={3} key={index}>
+                        <Col xs={12} sm={6} md={6} lg={4} xl={4} key={index}>
                             <div className="post-item">
                                 <div className="post-message">
                                 {item['message']}

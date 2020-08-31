@@ -6,6 +6,7 @@ export const lightTheme = {
     postBackground: "#ffffff",
     sidebarlink: "black",
     sidebarlinkhover: "rgba(0, 0, 0, 0.05)",
+    sliderColor: "#ccc",
     modalBackground: "white"
 }
 
@@ -16,5 +17,6 @@ export const darkTheme = {
     postBackground: "#0d0d0d",
     sidebarlink: "white",
     sidebarlinkhover: "rgba(255, 255, 255, 0.05)",
+    sliderColor: "#5c5c5c",
     modalBackground: "#1a1a1a"
 }

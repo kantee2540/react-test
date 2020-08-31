@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 import './Home.css';
 import axios from 'axios';
 
@@ -9,8 +10,9 @@ class Home extends Component{
 
     constructor(props){
         super(props);
+        var countrySetting = localStorage.getItem('news_country');
         this.apiUrl = 'https://newsapi.org/v2/top-headlines';
-        this.params = {'category': 'general', 'country': 'us'};
+        this.params = {'category': 'general', 'country': countrySetting};
         this.state = {
             error: null,
             isLoaded: false,
@@ -54,8 +56,8 @@ class Home extends Component{
         return(
             <div className="home">
                 {!isLoaded ? <Loading/> : ''}
-                <div className="row">
-                    <div className="col-3 d-none d-md-block">
+                <Row>
+                    <Col md={3} className="d-none d-md-block" style={{ position: "fixed"}}>
                         <ul className="sidebar">
                             <li>
                                 <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'business')}>
@@ -115,8 +117,8 @@ class Home extends Component{
                             </li>
                         </ul>
                         Created from 2020
-                    </div>
-                    <div className="col-12 col-md-9 ">
+                    </Col>
+                    <Col xs={12} md={{span: 9, offset: 3}} className="col-12 col-md-9 ">
                         <div className="row">
                             {items.map((item, index)=>(
                             <div className="col-12 col-sm-6" key={index}>
@@ -143,8 +145,8 @@ class Home extends Component{
                             </div>
                             ))}
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
             </div>
         )
     }

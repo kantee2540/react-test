@@ -37,6 +37,8 @@ img{
 }
 
 .post .author{
+    position: absolute;
+    width: 22em;
     color: gray;
     font-size: 12px;
 }
@@ -51,6 +53,7 @@ img{
 .sidebar{
     list-style: none;
     padding-left: 0px;
+    width: 80%;
 }
 
 .sidebar .sidebar-link{
@@ -82,7 +85,7 @@ img{
 .loading{
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    position: absolute;
+    position: fixed;
     padding: 30px 40px;
     width: 200px;
     text-align: center;

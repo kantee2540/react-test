@@ -7,7 +7,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import Home from './Home/Home'
 import Post from './Post/Post'
 import About from './About/About'
-import Setting from './Setting/Setting'
+import {Setting} from './Setting/Setting'
 import Login from './Auth/Login'
 
 import { ThemeProvider } from 'styled-components'
@@ -27,7 +27,7 @@ export const App = () => {
       <div>
         <Menu />
         <div>
-          <Container fluid="lg" className="content">
+          <Container className="content">
             <Switch>
               <Route exact path="/">
                 <Home/>

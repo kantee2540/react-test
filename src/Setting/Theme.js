@@ -52,7 +52,6 @@ function Theme(){
                             </label>
                         </div>
                     </div>
-                    <hr/>
                     </div>
                 ))}
             </div>

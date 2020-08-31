@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { SettingLink } from './Setting'
 
 class General extends React.Component {
 
@@ -44,28 +45,10 @@ class General extends React.Component {
                                 </label>
                             </div>
                         </div>
-                        <hr/>
                         </>
                     ))}
-                    <Link to="/theme" className="setting-block setting-link">
-                        <div className="setting-detail">
-                            <div className="setting-title">Theme</div>
-                            <div className="setting-description">Change theme to your favor appearance</div>
-                        </div>
-                        <div className="toggle-content">
-                            <i className="fas fa-angle-right"></i>
-                        </div>
-                    </Link>
-                    <hr/>
-                    <Link to="/security" className="setting-block setting-link">
-                        <div className="setting-detail">
-                            <div className="setting-title">Security</div>
-                            <div className="setting-description">Configuration of security for your account</div>
-                        </div>
-                        <div className="toggle-content">
-                            <i className="fas fa-angle-right"></i>
-                        </div>
-                    </Link>
+                    <SettingLink path="/theme" title="Theme" description="Change theme to your favor appearance"/>
+                    <SettingLink path="/security" title="Security" description="Configuration of security for your account"/>
                 </div>
             </div>
         )
