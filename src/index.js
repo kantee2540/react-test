@@ -1,12 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
+import {App} from './App'
 import * as serviceWorker from './serviceWorker'
-import { BrowserRouter, Router } from 'react-router-dom'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'
+import { reducer } from './themeReducer'
+
+const store = createStore(reducer)
 
 const AppWithRouter = () => (
-  <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
+  
 )
 
 ReactDOM.render(<AppWithRouter />, document.getElementById('root'))

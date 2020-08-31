@@ -14,53 +14,30 @@ export default function Setting() {
                     <Col md={3} className="d-none d-md-block">
                         <ul className="sidebar">
                             <li>
-                                <NavLink activeClassName="active" exact to="/">
-                                    <span className="icon">
-                                        <i className="fas fa-cog"></i>
-                                    </span>
-                                    General 
-                                </NavLink>
+                                <SettingLink path="/" settingName={"General"} iconClass={"fas fa-cog"} exact={true}/>
                             </li>
                             <li>
-                                <NavLink activeClassName="active" to="/theme">
-                                    <span className="icon">
-                                        <i className="fas fa-brush"></i>
-                                    </span>
-                                    Theme
-                                </NavLink>
+                                <SettingLink path="/theme" settingName={"Theme"} iconClass={"fas fa-brush"}/>
                             </li>
                             <li>
-                                <NavLink activeClassName="active" to="/security">
-                                    <span className="icon">
-                                        <i className="fas fa-shield-alt"></i>
-                                    </span>
-                                    Security
-                                </NavLink>
+                                <SettingLink path="/security" settingName={"Security"} iconClass={"fas fa-shield-alt"}/>
                             </li>
                             <li>
-                                <NavLink activeClassName="active" to="/language">
-                                    <span className="icon">
-                                        <i className="fas fa-language"></i>
-                                    </span>
-                                    Language
-                                </NavLink>
+                                <SettingLink path="/language" settingName={"Language"} iconClass={"fas fa-language"}/>
                             </li>
                             <hr/>
                             <li>
-                                <NavLink activeClassName="active" to="/recentlogin">
-                                    <span className="icon">
-                                        <i className="fas fa-clock"></i>
-                                    </span>
-                                    Recent Login
-                                </NavLink>
+                                <SettingLink path="/news" settingName={"News"} iconClass={"fas fa-newspaper"}/>
                             </li>
                             <li>
-                                <NavLink activeClassName="active" to="/help">
-                                    <span className="icon">
-                                        <i className="fas fa-question-circle"></i>
-                                    </span>
-                                    Help & Supports
-                                </NavLink>
+                                <SettingLink path="/post" settingName={"Post"} iconClass={"fas fa-mail-bulk"}/>
+                            </li>
+                            <hr/>
+                            <li>
+                                <SettingLink path="/recentlogin" settingName={"Recent Login"} iconClass={"fas fa-clock"}/>
+                            </li>
+                            <li>
+                                <SettingLink path="/help" settingName={"Help & Support"} iconClass={"fas fa-question-circle"}/>
                             </li>
                         </ul>
                     </Col>
@@ -80,4 +57,17 @@ export default function Setting() {
             </BrowserRouter>
         </div>
     )
+}
+
+class SettingLink extends React.Component{
+    render(){
+        return (
+            <NavLink className="sidebar-link" activeClassName="active" to={this.props.path} exact={this.props.exact || false}>
+                <span className="icon">
+                    <i className={this.props.iconClass}></i>
+                </span>
+                {this.props.settingName}
+            </NavLink>
+        )
+    }
 }

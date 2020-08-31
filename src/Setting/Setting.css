@@ -9,14 +9,12 @@ hr{
 
 .setting-block, .setting-link{
     padding: 20px 15px;
-    color: black;
     display: flex;
     justify-content: space-between;
 }
 
 .setting-link:hover{
     text-decoration: none;
-    color: black;
     background-color: rgba(0, 0, 0, 0.05);
 }
 

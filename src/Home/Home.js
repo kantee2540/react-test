@@ -58,7 +58,7 @@ class Home extends Component{
                     <div className="col-3 d-none d-md-block">
                         <ul className="sidebar">
                             <li>
-                                <Link to="/" onClick={this.changeCategory.bind(this, 'business')}>
+                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'business')}>
                                     <span className="icon">
                                         <i className="fas fa-briefcase"></i>
                                     </span>
@@ -66,7 +66,7 @@ class Home extends Component{
                                 </Link>
                             </li>
                             <li>
-                                <Link  to="/" onClick={this.changeCategory.bind(this, 'entertainment')}>
+                                <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'entertainment')}>
                                     <span className="icon">
                                         <i className="fas fa-wine-bottle"></i>
                                     </span>
@@ -74,7 +74,7 @@ class Home extends Component{
                                 </Link>
                             </li>
                             <li>
-                                <Link  to="/" onClick={this.changeCategory.bind(this, 'general')}>
+                                <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'general')}>
                                     <span className="icon">
                                         <i className="fas fa-newspaper"></i>
                                     </span>
@@ -82,7 +82,7 @@ class Home extends Component{
                                 </Link>
                             </li>
                             <li>
-                                <Link  to="/" onClick={this.changeCategory.bind(this, 'health')}>
+                                <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'health')}>
                                     <span className="icon">
                                         <i className="fas fa-heartbeat"></i>
                                     </span>
@@ -90,7 +90,7 @@ class Home extends Component{
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/" onClick={this.changeCategory.bind(this, 'science')}>
+                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'science')}>
                                     <span className="icon">
                                         <i className="fas fa-atom"></i>
                                     </span>
@@ -98,7 +98,7 @@ class Home extends Component{
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/" onClick={this.changeCategory.bind(this, 'sports')}>
+                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'sports')}>
                                     <span className="icon">
                                         <i className="fas fa-running"></i> 
                                     </span>
@@ -106,7 +106,7 @@ class Home extends Component{
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/" onClick={this.changeCategory.bind(this, 'technology')}>
+                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'technology')}>
                                     <span className="icon">
                                         <i className="fas fa-tv"></i>
                                     </span>

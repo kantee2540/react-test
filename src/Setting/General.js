@@ -40,7 +40,7 @@ class General extends React.Component {
                                 <label className="toggle-switch">
                                     <input type="checkbox" checked={item.isTurnon? true :false} 
                                     onChange={this.onhandleCheck.bind(this, item.isTurnon, key)}/>
-                                    <span class="slider"></span>
+                                    <span className="slider"></span>
                                 </label>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ class General extends React.Component {
                             <div className="setting-description">Change theme to your favor appearance</div>
                         </div>
                         <div className="toggle-content">
-                            <i class="fas fa-angle-right"></i>
+                            <i className="fas fa-angle-right"></i>
                         </div>
                     </Link>
                     <hr/>
@@ -63,7 +63,7 @@ class General extends React.Component {
                             <div className="setting-description">Configuration of security for your account</div>
                         </div>
                         <div className="toggle-content">
-                            <i class="fas fa-angle-right"></i>
+                            <i className="fas fa-angle-right"></i>
                         </div>
                     </Link>
                 </div>
