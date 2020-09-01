@@ -49,6 +49,8 @@ class General extends React.Component {
                     ))}
                     <SettingLink path="/theme" title="Theme" description="Change theme to your favor appearance"/>
                     <SettingLink path="/security" title="Security" description="Configuration of security for your account"/>
+                    <SettingLink path="/language" title="Language" description="Configuration language and region"/>
+
                 </div>
             </div>
         )

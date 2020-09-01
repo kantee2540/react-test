@@ -7,10 +7,14 @@
     box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.158);
 }
 
-.head-nav{
-    font-size: 23px;
-    padding: 20px;
-    display: inline-block;
+.head-brand{
+    display: block;
+    padding: 10px;
+}
+
+.head-brand img{
+    width: 50px;
+    height: 50px;
 }
 
 .head-link ul, .account ul{
@@ -28,7 +32,7 @@
     display: block;
 }
 
-.head-link li a:hover, .account li a:hover{
+.head-link li a:hover, .account li a:hover, .head-brand:hover{
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.05);
 }
@@ -131,7 +135,6 @@
 
 .sidebar-m li a i{
     margin-right: 1em;
-    color: rgb(40, 40, 40);
 }
 
 .sidebar-m li a:hover{

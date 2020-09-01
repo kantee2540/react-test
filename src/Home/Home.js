@@ -57,7 +57,7 @@ class Home extends Component{
             <div className="home">
                 {!isLoaded ? <Loading/> : ''}
                 <Row>
-                    <Col md={3} className="d-none d-md-block" style={{ position: "fixed"}}>
+                    <Col md={3} lg={3} xl={3} className="d-none d-md-block" style={{ position: "fixed"}}>
                         <ul className="sidebar">
                             <li>
                                 <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'business')}>
@@ -118,7 +118,7 @@ class Home extends Component{
                         </ul>
                         Created from 2020
                     </Col>
-                    <Col xs={12} md={{span: 9, offset: 3}} className="col-12 col-md-9 ">
+                    <Col xs={12} md={{span: 9, offset: 3}} xl={{span: 9, offset: 3.5}} className="col-12 col-md-9 ">
                         <div className="row">
                             {items.map((item, index)=>(
                             <div className="col-12 col-sm-6" key={index}>

@@ -7,13 +7,13 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body, .menu-bar{
+  body, .menu-bar, .sidebar-m{
       background: ${({ theme }) => theme.body};
       color: ${({theme}) => theme.text};
       transition: all 0.1s linear
   }
-  .head-link li a, .account li a{
-    color: ${({theme}) => theme.text};
+  .head-link li a, .account li a, .sidebar-m li a{
+    color: ${({theme}) => theme.text} ;
   }
 
   .post, .post-item, .login-content{
@@ -50,7 +50,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({theme}) => theme.sidebarlink};
   }
 
-  .sidebar .sidebar-link:hover, .sidebar .active, .setting-link:hover, .head-link li a:hover, .account li a:hover, .post-item a:hover{
+  .sidebar .sidebar-link:hover, .sidebar .active, .setting-link:hover, .head-link li a:hover, .account li a:hover, .head-brand:hover, .post-item a:hover{
     color: ${({theme}) => theme.sidebarlink};
     background-color: ${({theme}) => theme.sidebarlinkhover};
   }

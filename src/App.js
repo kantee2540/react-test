@@ -1,4 +1,4 @@
-import React, { useState, createContent, useReducer } from 'react'
+import React from 'react'
 import './App.css'
 import Menu from './Component/Menu.js'
 import { Container } from 'react-bootstrap'
@@ -17,7 +17,7 @@ import { useSelector } from 'react-redux'
 
 export const App = () => {
   
-  const theme = useSelector(state => state);
+  const theme = useSelector(state => state.theme);
   const themeMode = theme === 'light' ? lightTheme : darkTheme ;
 
   return (
