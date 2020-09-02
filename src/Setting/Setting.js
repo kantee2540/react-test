@@ -6,6 +6,7 @@ import './Setting.css'
 import General from './General'
 import Theme from './Theme'
 import News from './News'
+import Language from './Language'
 
 class Setting extends React.Component {
 
@@ -14,7 +15,7 @@ class Setting extends React.Component {
             <div>
                 <BrowserRouter basename="/settings">
                     <Row>
-                        <Col md={4} lg={3} className="d-none d-md-flex setting-menu">
+                        <Col md={3} lg={3} className="d-none d-md-flex setting-menu"style={{position: 'fixed', width: 350}}>
                             <ul className="sidebar">
                                 <li>
                                     <SettingMenuLink path="/" settingName={"General"} iconClass={"fas fa-cog"} exact={true}/>
@@ -44,7 +45,7 @@ class Setting extends React.Component {
                                 </li>
                             </ul>
                         </Col>
-                        <Col xs={12} md={{span: 8, offset: 4}} lg={{span: 9, offset: 3}} className="setting-content">
+                        <Col xs={12} md={{span: 9, offset: 3}} lg={{span: 9, offset: 3}} className="setting-content">
                             
                             <Switch>
                                 <Route exact path="/">
@@ -55,6 +56,9 @@ class Setting extends React.Component {
                                 </Route>
                                 <Route path="/news">
                                     <News/>
+                                </Route>
+                                <Route path="/language">
+                                    <Language/>
                                 </Route>
                             </Switch>
                             
@@ -99,7 +103,7 @@ class SettingDescription extends React.Component{
     render(){
         return(
             <div className="setting-block">
-                <div className="setting-description">{this.props.description}</div>
+                <div className="setting-description">{this.props.description}<br/>{this.props.description2}</div>
             </div>
         )
     }

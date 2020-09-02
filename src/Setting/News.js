@@ -53,7 +53,12 @@ export default function News() {
                         </select>
                     </div>
                 </div>
-                <SettingDescription description="The news language is depends on primary language for each countries. Default news country are from US. "/>
+                <div className="setting-block">
+                    <div className="setting-description">
+                        The news language is depends on primary language for each countries. Default news country are from US.<br/>
+                        All News data are contains from <a href="https://newsapi.org/">newsapi.org</a> read the license term <a href="https://newsapi.org/terms">here</a>
+                    </div>
+                </div>
 
             </div>
         </div>

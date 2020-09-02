@@ -10,9 +10,9 @@ import allReducers from './Setting/allReducers'
 const store = createStore(allReducers)
 
 const AppWithRouter = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
+    <Provider store={store}>
+      <App />
+    </Provider>
   
 )
 

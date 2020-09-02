@@ -6,7 +6,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
 import Home from './Home/Home'
 import Post from './Post/Post'
-import About from './About/About'
+import Vote from './Vote/Vote'
 import {Setting} from './Setting/Setting'
 import Login from './Auth/Login'
 
@@ -35,8 +35,8 @@ export const App = () => {
               <Route path="/post">
                 <Post/>
               </Route>
-              <Route path="/about">
-                <About/>
+              <Route path="/vote">
+                <Vote/>
               </Route>
               <Route path="/settings">
                   <Setting/>
