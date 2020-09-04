@@ -8,8 +8,8 @@ class Login extends React.Component{
         return(
             <div id="login">
                 <Row>
-                    <Col md={5} lg={7}></Col>
-                    <Col md={7} lg={5}>
+                    <Col md={4} lg={6} xl={7}></Col>
+                    <Col md={8} lg={6} xl={5}>
                     <div className="login-content">
                         <h1>Login</h1>
                         <Form>

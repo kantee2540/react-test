@@ -50,7 +50,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({theme}) => theme.sidebarlink};
   }
 
-  .sidebar .sidebar-link:hover, .sidebar .active, .setting-link:hover, .head-link li a:hover, .account li a:hover, .head-brand:hover, .post-item a:hover{
+  .sidebar .sidebar-link:hover, .sidebar .active, .setting-link:hover, .head-link li a:hover, .account li a:hover, .head-brand:hover, .post-action a:hover{
     color: ${({theme}) => theme.sidebarlink};
     background-color: ${({theme}) => theme.sidebarlinkhover};
   }

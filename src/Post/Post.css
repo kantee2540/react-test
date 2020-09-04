@@ -8,12 +8,32 @@
 }
 
 .post-item hr{
-    margin: 15px 0px;
+    margin: 10px 0px;
 }
 
 .post-message{
-    height: 70px;
+    min-height: 130px;
     overflow: hidden;
+}
+
+.post-text{
+    padding-left: 20px;
+}
+
+.post-time{
+    font-size: 12px;
+    color: gray;
+}
+
+.profile-pic{
+    text-align: center;
+}
+
+.profile-pic img{
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .post-action{

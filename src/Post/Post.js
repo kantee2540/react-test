@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Post.css'
 
+import defaultProfile from '../Image/profile-default.png'
+
 class Post extends Component{
 
     constructor(props){
@@ -42,26 +44,52 @@ class Post extends Component{
             <div>
                 
                 {!isLoaded ? <Loading message={!error ? "Loading" : error}/>: ''}
-                <div className="head-content">
-                    <span className="head-title">Post</span>
-                </div>
                 <Row>
-                    {items.map((item, index) => (
-                        <Col xs={12} sm={6} md={6} lg={4} xl={4} key={index}>
-                            <div className="post-item">
-                                <div className="post-message">
-                                {item['message']}
+                    <Col md={3} className="d-none d-md-flex" style={{position: "fixed"}}>
+                        <ul className="sidebar">
+                            <li>
+                                <Link to="/post" className="sidebar-link">
+                                    <span className="icon">
+                                        <i class="fas fa-clock"></i>
+                                    </span>
+                                    Latest Post
+                                </Link>
+                                <Link to="/post" className="sidebar-link">
+                                    <span className="icon">
+                                        <i class="fas fa-fire"></i>
+                                    </span>
+                                    Thread
+                                </Link>
+                            </li>
+                        </ul>
+                    </Col>
+                    <Col md={{span: 9, offset: 3}}>
+                        <Row>
+                            {items.map((item, index) => (
+                                <Col xs={12} md={6} key={index}>
+                                    <div className="post-item">
+                                        <Row className="post-message">
+                                            <Col xs={2} className="profile-pic"><img src={defaultProfile} /></Col>
+                                            <Col xs={10} className="post-text">
+                                                <a href="#">Person name</a>
+                                                <div className="post-time">12:00</div>
+                                            <hr/>
+                                            {item['message']}
+                                        </Col>
+                                    
+                                    </Row>
+                                    <hr/>
+                                    <div className="row post-action">
+                                        <a className="col-4" href="#"><i className="far fa-heart"></i></a>
+                                        <a className="col-4" href="#"><i className="far fa-comment"></i></a>
+                                        <a className="col-4" href="#"><i className="far fa-share-square"></i></a>
+                                        <a className="col-4" href="#"><i className="fas fa-align-justify"></i></a>
+                                    </div>
                                 </div>
-                                <hr/>
-                                <div className="row post-action">
-                                    <a className="col-4" href="#"><i className="far fa-heart"></i></a>
-                                    <a className="col-4" href="#"><i className="far fa-comment"></i></a>
-                                    <a className="col-4" href="#"><i className="far fa-share-square"></i></a>
-                                    <a className="col-4" href="#"><i className="fas fa-align-justify"></i></a>
-                                </div>
-                            </div>
-                        </Col>
-                    ))}
+                            </Col>
+                        ))}
+                        </Row>
+                    </Col>
                 </Row>
 
                 <PostModal/>
