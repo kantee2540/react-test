@@ -45,21 +45,20 @@ class Post extends Component{
                 
                 {!isLoaded ? <Loading message={!error ? "Loading" : error}/>: ''}
                 <Row>
-                    <Col md={3} className="d-none d-md-flex" style={{position: "fixed"}}>
+                    <Col md={3} className="d-none d-md-flex" style={{position: "fixed", width: 350}}>
                         <ul className="sidebar">
                             <li>
-                                <Link to="/post" className="sidebar-link">
-                                    <span className="icon">
-                                        <i class="fas fa-clock"></i>
-                                    </span>
-                                    Latest Post
-                                </Link>
-                                <Link to="/post" className="sidebar-link">
-                                    <span className="icon">
-                                        <i class="fas fa-fire"></i>
-                                    </span>
-                                    Thread
-                                </Link>
+                                <Sidebarlink path="/post" icon="fas fa-clock" name="Latest Post"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Thread"/>
+                                <hr/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="General"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Sport"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Science"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Technology"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Game"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Entertainment"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Health"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="World"/>
                             </li>
                         </ul>
                     </Col>
@@ -170,4 +169,17 @@ function PostModal(){
             </Modal>
         </>
     )
+}
+
+class Sidebarlink extends React.Component{
+    render(){
+        return(
+            <Link to={this.props.path} className="sidebar-link">
+                <span className="icon">
+                    <i class={this.props.icon}></i>
+                </span>
+                {this.props.name}
+            </Link>
+        )
+    }
 }
