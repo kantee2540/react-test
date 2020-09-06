@@ -91,7 +91,7 @@ function Menu() {
             <li><NavLink to="/post" onClick={clicked}><i className="fas fa-mail-bulk"></i>Post</NavLink></li>
             <li><NavLink to="/vote" onClick={clicked}><i class="fas fa-chart-pie"></i>Vote</NavLink></li>
             <li><NavLink to="/product" onClick={clicked}><i className="fas fa-shopping-cart"></i>Product</NavLink></li>
-            <li><NavLink to="/settings" onClick={clicked}><i className="fas fa-cog"></i>Setting</NavLink></li>
+            <li><NavLink to="/settings" onClick={clicked}><i className="fas fa-cog"></i>Settings</NavLink></li>
             <hr/>
             <li><NavLink to="/login" onClick={clicked}><i className="fas fa-user-circle"></i>Sign in</NavLink>
             </li>

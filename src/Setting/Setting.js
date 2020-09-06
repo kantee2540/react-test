@@ -15,37 +15,39 @@ class Setting extends React.Component {
             <div>
                 <BrowserRouter basename="/settings">
                     <Row>
-                        <Col md={3} lg={3} className="d-none d-md-flex setting-menu"style={{position: 'fixed', width: 350}}>
-                            <ul className="sidebar">
-                                <li>
-                                    <SettingMenuLink path="/" settingName={"General"} iconClass={"fas fa-cog"} exact={true}/>
-                                </li>
-                                <li>
-                                    <SettingMenuLink path="/theme" settingName={"Theme"} iconClass={"fas fa-brush"}/>
-                                </li>
-                                <li>
-                                    <SettingMenuLink path="/security" settingName={"Security"} iconClass={"fas fa-shield-alt"}/>
-                                </li>
-                                <li>
-                                    <SettingMenuLink path="/language" settingName={"Language"} iconClass={"fas fa-language"}/>
-                                </li>
-                                <hr/>
-                                <li>
-                                    <SettingMenuLink path="/news" settingName={"News"} iconClass={"fas fa-newspaper"}/>
-                                </li>
-                                <li>
-                                    <SettingMenuLink path="/post" settingName={"Post"} iconClass={"fas fa-mail-bulk"}/>
-                                </li>
-                                <hr/>
-                                <li>
-                                    <SettingMenuLink path="/recentlogin" settingName={"Recent Login"} iconClass={"fas fa-clock"}/>
-                                </li>
-                                <li>
-                                    <SettingMenuLink path="/help" settingName={"Help & Support"} iconClass={"fas fa-question-circle"}/>
-                                </li>
-                            </ul>
+                        <Col md={3} lg={3} className="d-none d-md-flex setting-menu sidebar-col">
+                            <div className="sidebar-content">
+                                <ul className="sidebar">
+                                    <li>
+                                        <SettingMenuLink path="/" settingName={"General"} iconClass={"fas fa-cog"} exact={true}/>
+                                    </li>
+                                    <li>
+                                        <SettingMenuLink path="/theme" settingName={"Theme"} iconClass={"fas fa-brush"}/>
+                                    </li>
+                                    <li>
+                                        <SettingMenuLink path="/security" settingName={"Security"} iconClass={"fas fa-shield-alt"}/>
+                                    </li>
+                                    <li>
+                                        <SettingMenuLink path="/language" settingName={"Language"} iconClass={"fas fa-language"}/>
+                                    </li>
+                                    <hr/>
+                                    <li>
+                                        <SettingMenuLink path="/news" settingName={"News"} iconClass={"fas fa-newspaper"}/>
+                                    </li>
+                                    <li>
+                                        <SettingMenuLink path="/post" settingName={"Post"} iconClass={"fas fa-mail-bulk"}/>
+                                    </li>
+                                    <hr/>
+                                    <li>
+                                        <SettingMenuLink path="/recentlogin" settingName={"Recent Login"} iconClass={"fas fa-clock"}/>
+                                    </li>
+                                    <li>
+                                        <SettingMenuLink path="/help" settingName={"Help & Support"} iconClass={"fas fa-question-circle"}/>
+                                    </li>
+                                </ul>
+                            </div>
                         </Col>
-                        <Col xs={12} md={{span: 9, offset: 3}} lg={{span: 9, offset: 3}} className="setting-content">
+                        <Col xs={12} md={{span: 9, offset: 3}} lg={{span: 9, offset: 3}} className="setting-content content-col">
                             
                             <Switch>
                                 <Route exact path="/">

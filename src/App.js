@@ -27,7 +27,7 @@ export const App = () => {
       <div>
         <Menu />
         <div>
-          <Container className="content">
+          <Container fluid className="content">
             <Switch>
               <Route exact path="/">
                 <Home/>

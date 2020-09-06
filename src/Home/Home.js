@@ -56,69 +56,73 @@ class Home extends Component{
         return(
             <div className="home">
                 {!isLoaded ? <Loading/> : ''}
+                
+
                 <Row>
-                    <Col md={3} lg={3} xl={3} className="d-none d-md-block" style={{position: 'fixed', width: 350}}>
-                        <ul className="sidebar">
-                            <li>
-                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'business')}>
-                                    <span className="icon">
-                                        <i className="fas fa-briefcase"></i>
-                                    </span>
-                                    Business
-                                </Link>
-                            </li>
-                            <li>
-                                <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'entertainment')}>
-                                    <span className="icon">
-                                        <i className="fas fa-wine-bottle"></i>
-                                    </span>
-                                    Entertainment
-                                </Link>
-                            </li>
-                            <li>
-                                <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'general')}>
-                                    <span className="icon">
-                                        <i className="fas fa-newspaper"></i>
-                                    </span>
-                                    General
-                                </Link>
-                            </li>
-                            <li>
-                                <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'health')}>
-                                    <span className="icon">
-                                        <i className="fas fa-heartbeat"></i>
-                                    </span>
-                                    Health
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'science')}>
-                                    <span className="icon">
-                                        <i className="fas fa-atom"></i>
-                                    </span>
-                                    Science
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'sports')}>
-                                    <span className="icon">
-                                        <i className="fas fa-running"></i> 
-                                    </span>
-                                    Sports
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'technology')}>
-                                    <span className="icon">
-                                        <i className="fas fa-tv"></i>
-                                    </span>
-                                    Technology
-                                </Link>
-                            </li>
-                        </ul>
-                        Created from 2020
+                    <Col md={3} className="d-none d-md-flex sidebar-col">
+                        <div className="sidebar-content">
+                            <ul className="sidebar">
+                                <li>
+                                    <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'business')}>
+                                        <span className="icon">
+                                            <i className="fas fa-briefcase"></i>
+                                        </span>
+                                        Business
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'entertainment')}>
+                                        <span className="icon">
+                                            <i className="fas fa-wine-bottle"></i>
+                                        </span>
+                                        Entertainment
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'general')}>
+                                        <span className="icon">
+                                            <i className="fas fa-newspaper"></i>
+                                        </span>
+                                        General
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link  to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'health')}>
+                                        <span className="icon">
+                                            <i className="fas fa-heartbeat"></i>
+                                        </span>
+                                        Health
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'science')}>
+                                        <span className="icon">
+                                            <i className="fas fa-atom"></i>
+                                        </span>
+                                        Science
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'sports')}>
+                                        <span className="icon">
+                                            <i className="fas fa-running"></i> 
+                                        </span>
+                                        Sports
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/" className="sidebar-link" onClick={this.changeCategory.bind(this, 'technology')}>
+                                        <span className="icon">
+                                            <i className="fas fa-tv"></i>
+                                        </span>
+                                        Technology
+                                    </Link>
+                                </li>
+                            </ul>
+                            Created from 2020
+                        </div>
                     </Col>
-                    <Col xs={12} md={{span: 9, offset: 3}} xl={{span: 9, offset: 3}}>
+                    <Col xs={12} md={{span: 9, offset: 3}} xl={{span: 9, offset: 3}} className="content-col">
                         <div className="row">
                             {items.map((item, index)=>(
                             <div className="col-12 col-sm-6" key={index}>

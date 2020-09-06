@@ -45,9 +45,9 @@ class Post extends Component{
                 
                 {!isLoaded ? <Loading message={!error ? "Loading" : error}/>: ''}
                 <Row>
-                    <Col md={3} className="d-none d-md-flex" style={{position: "fixed", width: 350}}>
-                        <ul className="sidebar">
-                            <li>
+                    <Col md={3} className="d-none d-md-flex sidebar-col">
+                        <div className="sidebar-content">
+                            <ul className="sidebar">
                                 <Sidebarlink path="/post" icon="fas fa-clock" name="Latest Post"/>
                                 <Sidebarlink path="/post" icon="fas fa-fire" name="Thread"/>
                                 <hr/>
@@ -59,10 +59,16 @@ class Post extends Component{
                                 <Sidebarlink path="/post" icon="fas fa-fire" name="Entertainment"/>
                                 <Sidebarlink path="/post" icon="fas fa-fire" name="Health"/>
                                 <Sidebarlink path="/post" icon="fas fa-fire" name="World"/>
-                            </li>
-                        </ul>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Health"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="World"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Health"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="World"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="Health"/>
+                                <Sidebarlink path="/post" icon="fas fa-fire" name="World"/>
+                            </ul>
+                        </div>
                     </Col>
-                    <Col md={{span: 9, offset: 3}}>
+                    <Col md={{span: 9, offset: 3}} className="content-col">
                         <Row>
                             {items.map((item, index) => (
                                 <Col xs={12} md={6} key={index}>
@@ -174,12 +180,14 @@ function PostModal(){
 class Sidebarlink extends React.Component{
     render(){
         return(
-            <Link to={this.props.path} className="sidebar-link">
-                <span className="icon">
-                    <i class={this.props.icon}></i>
-                </span>
-                {this.props.name}
-            </Link>
+            <li>
+                <Link to={this.props.path} className="sidebar-link">
+                    <span className="icon">
+                        <i class={this.props.icon}></i>
+                    </span>
+                    {this.props.name}
+                </Link>
+            </li>
         )
     }
 }

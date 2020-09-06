@@ -9,7 +9,7 @@ class Login extends React.Component{
             <div id="login">
                 <Row>
                     <Col md={4} lg={6} xl={7}></Col>
-                    <Col md={8} lg={6} xl={5}>
+                    <Col md={8} lg={6} xl={5} className="content-col">
                     <div className="login-content">
                         <h1>Login</h1>
                         <Form>
