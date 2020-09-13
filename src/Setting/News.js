@@ -1,5 +1,5 @@
 import React from 'react'
-import { SettingDescription } from './Setting'
+import { Link } from 'react-router-dom'
 
 const country = [{name: 'Argentina', code: 'ar'}, {name: 'Australia', code: 'au'},
 {name: 'Austria', code: 'at'}, {name: 'Belgium', code: 'be'},
@@ -38,7 +38,10 @@ export default function News() {
     var selectedCode = localStorage.getItem('news_country') || "us";
     return (
         <div>
-            <div className="head-title">News</div>
+            <div className="head-title">
+                <Link to="/" className="setting-back d-inline d-md-none"><i class="fas fa-arrow-left"></i></Link>
+                News
+            </div>
             <div className="news-content">
                 <div className="setting-block">
                     <div className="setting-detail">

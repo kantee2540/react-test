@@ -27,7 +27,7 @@ function Menu() {
     <div className="container-fluid menu-bar">
       <div className="d-flex justify-content-between">
         <NavLink to="/" exact={true} className="head-brand">
-          <img src={theme === 'light' ? iconBlack: iconWhite}/>
+          <img src={theme === 'light' ? iconBlack: iconWhite} alt="icon"/>
         </NavLink>
         <div className="head-link d-none d-md-block">
           <ul>
@@ -38,7 +38,7 @@ function Menu() {
               <NavLink activeClassName="head-link-active" to="/post"><i className="fas fa-mail-bulk"></i></NavLink>
             </li>
             <li>
-              <NavLink activeClassName="head-link-active" to="/vote"><i class="fas fa-chart-pie"></i></NavLink>
+              <NavLink activeClassName="head-link-active" to="/vote"><i className="fas fa-chart-pie"></i></NavLink>
             </li>
             <li>
               <NavLink activeClassName="head-link-active" to="/product" ><i className="fas fa-shopping-cart"></i></NavLink>
@@ -89,7 +89,7 @@ function Menu() {
           <ul>
             <li><NavLink to="/" onClick={clicked}><i className="fas fa-newspaper"></i>News</NavLink></li>
             <li><NavLink to="/post" onClick={clicked}><i className="fas fa-mail-bulk"></i>Post</NavLink></li>
-            <li><NavLink to="/vote" onClick={clicked}><i class="fas fa-chart-pie"></i>Vote</NavLink></li>
+            <li><NavLink to="/vote" onClick={clicked}><i className="fas fa-chart-pie"></i>Vote</NavLink></li>
             <li><NavLink to="/product" onClick={clicked}><i className="fas fa-shopping-cart"></i>Product</NavLink></li>
             <li><NavLink to="/settings" onClick={clicked}><i className="fas fa-cog"></i>Settings</NavLink></li>
             <hr/>

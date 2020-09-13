@@ -46,11 +46,14 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({theme}) => theme.text};
   }
 
-  .sidebar-link, .setting-link{
+  .sidebar-link, .setting-link, .setting-back{
     color: ${({theme}) => theme.sidebarlink};
   }
 
-  .sidebar .sidebar-link:hover, .sidebar .active, .setting-link:hover, .head-link li a:hover, .account li a:hover, .head-brand:hover, .post-action a:hover{
+  .sidebar .sidebar-link:hover, .sidebar .active,
+  .setting-link:hover, .head-link li a:hover, 
+  .account li a:hover, .head-brand:hover, 
+  .post-action a:hover, .setting-back:hover{
     color: ${({theme}) => theme.sidebarlink};
     background-color: ${({theme}) => theme.sidebarlinkhover};
   }

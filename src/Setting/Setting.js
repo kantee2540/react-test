@@ -104,7 +104,7 @@ class SettingLink extends React.Component{
 class SettingDescription extends React.Component{
     render(){
         return(
-            <div className="setting-block">
+            <div className="setting-block" key={this.props.key}>
                 <div className="setting-description">{this.props.description}<br/>{this.props.description2}</div>
             </div>
         )

@@ -1,11 +1,10 @@
-
-
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Language() {
     return (
         <div>
-            <div className="head-title">Language</div>
+            <div className="head-title"><Link to="/" className="setting-back d-inline d-md-none"><i class="fas fa-arrow-left"></i></Link>Language</div>
             <div className="">
                 <div className="setting-block">
                     <div className="setting-detail">

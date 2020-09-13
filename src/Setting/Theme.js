@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { lightThemeChange, darkThemeChange } from './ThemeReducer'
+import { Link } from 'react-router-dom'
 
 function Theme(){
     const dispatch = useDispatch();
@@ -35,7 +36,10 @@ function Theme(){
     
     return (
         <div>
-            <div className="head-title">Theme</div>
+            <div className="head-title">
+                <Link to="/" className="setting-back d-inline d-md-none"><i class="fas fa-arrow-left"></i></Link>
+                Theme
+            </div>
             <div>
             {themeSetting.map((item, key) => (
                     <div key={key}>

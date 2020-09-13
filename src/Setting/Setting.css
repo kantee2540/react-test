@@ -2,6 +2,12 @@
     position: fixed;
 }
 
+.setting-back{
+    padding: 10px;
+    margin-right: 0.5em;
+    border-radius: 8px;
+}
+
 hr{
     margin: 0px;
 }

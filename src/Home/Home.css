@@ -61,13 +61,17 @@ img{
     height: 100%;
 }
 
+.sidebar-content::-webkit-scrollbar{
+    background-color: transparent;
+}
+
 .sidebar-content{
     width: 20em;
     height: 100%;
     margin-right: 20px;
     margin-bottom: 20px;
     position: fixed;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .sidebar{

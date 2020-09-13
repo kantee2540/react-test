@@ -35,7 +35,7 @@ class Home extends Component{
             });
         }).catch(error => {
             this.setState({
-                error: error
+                error: error.message
             });
             console.log(error);
         }).then(function () {
@@ -55,8 +55,7 @@ class Home extends Component{
         const { error, isLoaded, items } = this.state
         return(
             <div className="home">
-                {!isLoaded ? <Loading/> : ''}
-                
+                {!isLoaded ? <Loading message={!error ? 'Loading...': error}/> : ''}
 
                 <Row>
                     <Col md={3} className="d-none d-md-flex sidebar-col">
@@ -161,7 +160,7 @@ export default Home;
 class Loading extends Component{
     render(){
         return(
-            <div className="loading">Loading</div>
+            <div className="loading">{this.props.message}</div>
         )
     }
 }
